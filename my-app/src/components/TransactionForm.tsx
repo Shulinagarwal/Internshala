@@ -8,7 +8,7 @@ interface TransactionFormProps {
 
 const TransactionForm: React.FC<TransactionFormProps> = ({ onSubmit }) => {
   const [description, setDescription] = useState("");
-  const expenseCategories = ["Food", "Travel", "Entertainment", "Shopping", "Bills"];
+  const expenseCategories = ["Food", "Travel", "Entertainment", "Shopping", "Bills","Transport"];
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
   const [category, setCategory] = useState("Food");
