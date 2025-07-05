@@ -4,6 +4,8 @@ A modern full-stack web app to visualize, track, and manage personal finances. B
 
 ---
 
+## If you are stuck on loading Page Give it 2 minutes Because it is uploaded on render and render takes 2 minutes to start the backend server. After 2 minutes you will see the project on your screen.
+
 ## 🔗 Live Demo
 (https://internshala-beryl.vercel.app/)
 
