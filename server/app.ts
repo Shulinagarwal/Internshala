@@ -10,5 +10,9 @@ app.use(express.json());
 app.use("/api/budgets", budgetRoutes);
 
 app.use("/api/transactions", transactionRoutes);
+app.get("/",(req,res)=>{
+    res.send("Backend Service")
+})
 
 export default app;
+
