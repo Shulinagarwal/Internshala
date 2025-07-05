@@ -11,4 +11,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://internshala-45cy.onrender.com', // or your backend port
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 })
