@@ -1,4 +1,4 @@
-import React from "react";
+
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import type { Transaction } from "../models/Transaction";
 

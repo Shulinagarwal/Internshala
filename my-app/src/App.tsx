@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import type { Transaction } from "./models/Transaction";
 import { fetchTransactions, addTransaction, deleteTransaction } from "./lib/api";
 import TransactionForm from "./components/TransactionForm";
