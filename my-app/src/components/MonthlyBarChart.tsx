@@ -8,13 +8,25 @@ interface MonthlyBarChartProps {
 }
 
 const MonthlyBarChart: React.FC<MonthlyBarChartProps> = ({ transactions }) => {
-  const monthly = transactions.reduce((acc: any, tx) => {
-    const month = new Date(tx.date).toLocaleString("default", { month: "short" });
-    acc[month] = (acc[month] || 0) + tx.amount;
-    return acc;
-  }, {});
+  // Step 1: Aggregate by monthIndex
+  const monthlyMap = new Map<number, number>();
 
-  const data = Object.entries(monthly).map(([month, total]) => ({ month, total }));
+  transactions.forEach((tx) => {
+    const date = new Date(tx.date);
+    const monthIndex = date.getMonth(); // 0 = Jan, 1 = Feb, ..., 11 = Dec
+    monthlyMap.set(monthIndex, (monthlyMap.get(monthIndex) || 0) + tx.amount);
+  });
+
+  // Step 2: Convert to sorted array with month names
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+                      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+  const data = Array.from(monthlyMap.entries())
+    .sort(([a], [b]) => a - b) // Sort by monthIndex
+    .map(([monthIndex, total]) => ({
+      month: monthNames[monthIndex],
+      total
+    }));
 
   return (
     <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
