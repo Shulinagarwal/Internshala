@@ -32,8 +32,8 @@ const App = () => {
 
        const BASE_URL =
   import.meta.env.MODE === "development"
-    ? "/api"
-    : import.meta.env.VITE_API_URL;
+    ? ""
+    :  "https://internshala-45cy.onrender.com";
 
 const res = await axios.get(`${BASE_URL}/api/budgets?month=${currentMonth}&year=${currentYear}`);
 
