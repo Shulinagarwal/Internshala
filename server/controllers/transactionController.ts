@@ -24,6 +24,8 @@ export const addTransaction = async (req: Request, res: Response) => {
   }
 };
 
+
+
 export const deleteTransaction = async (req: Request, res: Response) => {
   await Transaction.findByIdAndDelete(req.params.id);
   res.status(204).end();

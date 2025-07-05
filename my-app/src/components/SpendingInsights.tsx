@@ -36,12 +36,6 @@ const SpendingInsights: React.FC<SpendingInsightsProps> = ({ transactions, budge
   const totalOverage = overBudgetCategories.reduce((sum, insight) => sum + insight.overage, 0);
   const totalSavings = underBudgetCategories.reduce((sum, insight) => sum + insight.remaining, 0);
 
-  const getInsightColor = (percentage: number) => {
-    if (percentage >= 100) return 'red';
-    if (percentage >= 80) return 'orange';
-    if (percentage >= 60) return 'yellow';
-    return 'green';
-  };
 
   const getInsightIcon = (percentage: number) => {
     if (percentage >= 100) return '🚨';
