@@ -10,14 +10,9 @@ export const addTransaction = async (req: Request, res: Response) => {
   try {
     const { description, amount, date, category } = req.body;
 
-    const expenseCategories = ["Food", "Travel", "Entertainment", "Shopping", "Bills"];
-    const finalAmount = expenseCategories.includes(category)
-      ? -Math.abs(amount)
-      : Math.abs(amount);
-
     const transaction = new Transaction({
       description,
-      amount: finalAmount,
+      amount,
       date,
       category,
     });
@@ -28,7 +23,6 @@ export const addTransaction = async (req: Request, res: Response) => {
     res.status(400).json({ error: "Failed to add transaction" });
   }
 };
-
 
 export const deleteTransaction = async (req: Request, res: Response) => {
   await Transaction.findByIdAndDelete(req.params.id);

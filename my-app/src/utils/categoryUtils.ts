@@ -22,3 +22,13 @@ export const categories = [
   "Shopping",
   "Healthcare"
 ];
+
+export const expenseCategories = [
+  "Food", 
+  "Housing",
+  "Bills",
+  "Transport",
+  "Entertainment",
+  "Shopping",
+  "Healthcare"
+];
