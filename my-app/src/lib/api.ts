@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000/api/transactions";
+const BASE_URL = "https://internshala-45cy.onrender.com/api/transactions";
 
 export const fetchTransactions = () => fetch(BASE_URL).then(res => res.json());
 
