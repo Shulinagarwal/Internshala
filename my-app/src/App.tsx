@@ -30,7 +30,13 @@ const App = () => {
         const txs = await fetchTransactions();
         setTransactions(txs);
 
-        const res = await axios.get(`/api/budgets?month=${currentMonth}&year=${currentYear}`);
+       const BASE_URL =
+  import.meta.env.MODE === "development"
+    ? "/api"
+    : import.meta.env.VITE_API_URL;
+
+const res = await axios.get(`${BASE_URL}/api/budgets?month=${currentMonth}&year=${currentYear}`);
+
         const map: BudgetMap = {};
         console.log("Budget API response:", res.data);
         res.data.forEach((b: { category: string; amount: number }) => {
