@@ -5,7 +5,7 @@ A modern full-stack web app to visualize, track, and manage personal finances. B
 ---
 
 ## 🔗 Live Demo
-Coming Soon...
+(https://internshala-beryl.vercel.app/)
 
 ---
 
@@ -50,13 +50,12 @@ Coming Soon...
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/personal-finance-visualizer.git
-cd personal-finance-visualizer
+git clone https://github.com/Shulinagarwal/Internshala.git
 
 # 2. Install backend dependencies
 cd server
 npm install
 
 # 3. Install frontend dependencies
-cd ../client
+cd my-app
 npm install
